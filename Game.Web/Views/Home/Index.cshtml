@@ -64,14 +64,14 @@
                         return playerName === player.playerName();
                     });
 
-                    if (!playerExistInList) {
-                        vm.otherPlayers.push(new PlayerViewModel(playerName, health));
-                    }
+                if (!playerExistInList) {
+                    vm.otherPlayers.push(new PlayerViewModel(playerName, health));
+                }
             }
 
         }
 
-        gameHub.client.updatePlayerHealth = function (playerName, health) {
+        gameHub.client.updatePlayerHealth = function(playerName, health) {
 
             if (vm.thisPlayer().playerName() === playerName) {
                 vm.thisPlayer().changeHealth(health);
@@ -85,6 +85,13 @@
             }
 
         }
+
+        $.connection.hub.disconnected(function() {
+            setTimeout(function() {
+                    $.connection.hub.start();
+                },
+                5000);
+        });
 
         $.connection.hub.start();
 
@@ -117,7 +124,7 @@
 
             self.thisPlayer = ko.observable(new PlayerViewModel('', NaN));
 
-            self.otherPlayers = ko.observableArray();
+            self.otherPlayers = ko.observableArray().extend({ rateLimit: { timeout: 500, method: "notifyWhenChangesStop"} });
 
             self.joinGame = function() {
                 gameHub.server.joinGame(self.newPlayerName());
