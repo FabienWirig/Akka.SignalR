@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{1AD837
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.State", "Game.State\Game.State.csproj", "{998CE06F-289B-4983-98C9-1781F340B39D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.WindowsService", "Game.WindowsService\Game.WindowsService.csproj", "{2832FEB6-247A-4A47-A9A0-4156AB0A8187}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{998CE06F-289B-4983-98C9-1781F340B39D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{998CE06F-289B-4983-98C9-1781F340B39D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{998CE06F-289B-4983-98C9-1781F340B39D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2832FEB6-247A-4A47-A9A0-4156AB0A8187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2832FEB6-247A-4A47-A9A0-4156AB0A8187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2832FEB6-247A-4A47-A9A0-4156AB0A8187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2832FEB6-247A-4A47-A9A0-4156AB0A8187}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
